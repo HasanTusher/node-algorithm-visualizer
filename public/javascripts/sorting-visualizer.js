@@ -14,8 +14,7 @@ function draw(size) {
    }
 }
 
-function exchangeAnimation() {
-   reqAnimFrame = window.requestAnimationFrame(exchangeAnimation);
+function exchangeAnimation(val) {
    if(x > 9*25){
       return;
    }
@@ -36,6 +35,9 @@ function exchangeAnimation() {
    if(isLastOne){
       return
    }
+   reqAnimFrame = window.requestAnimationFrame(function (val){
+      exchangeAnimation(++val);
+   });
 }
 document.addEventListener("DOMContentLoaded", function(event) {
    arr = [];
