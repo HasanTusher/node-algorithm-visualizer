@@ -1,53 +1,24 @@
+function createArray(arr) {
+   for(let i = 10; i> 0; i--){
+      arr.push(i);
+   }
+}
 
+function draw() {
+   var canvas  = document.getElementById("myCanvas");
+   var context = canvas.getContext("2d");
+   context.clearRect(0, 0, 500, 500);
+
+   let size = 10;
+   let x = 0;
+   for(let i = 0; i < size; i++) {
+      context.fillStyle = "#ff00ff";
+      context.fillRect(i*25, 100+(i*25), 25, arr[i]*25);
+   }
+}
 
 document.addEventListener("DOMContentLoaded", function(event) {
-   var x =  0;
-   var y = 15;
-
-   var x2 = 475;
-   var y2 = 15;
-
-   var speed = 1;
-
-   function animate() {
-
-      // reqAnimFrame = window.mozRequestAnimationFrame    ||
-      //     window.webkitRequestAnimationFrame ||
-      //     window.msRequestAnimationFrame     ||
-      //     window.oRequestAnimationFrame
-      // ;
-      reqAnimFrame = window.requestAnimationFrame(animate);
-
-      //reqAnimFrame(animate);
-
-      x += speed;
-
-      x2-=speed;
-
-      if(x <= 0 || x >= 475){
-         speed = -speed;
-         // return;
-      }
-
-      if(x2 <= 0 || x2 >= 475){
-         speed = +speed;
-         // return;
-      }
-
-      draw();
-   }
-
-
-   function draw() {
-      var canvas  = document.getElementById("myCanvas");
-      var context = canvas.getContext("2d");
-
-      context.clearRect(0, 0, 500, 170);
-      context.fillStyle = "#ff00ff";
-      context.fillRect(x, y, 25, 25);
-      context.fillStyle = "#0040ff";
-      context.fillRect(x2, y2, 25, 25);
-      //context.fillRect(x, y+100, 25, 25);
-   }
-   animate();
+   arr = [];s
+   createArray(arr);
+   draw();
 });
