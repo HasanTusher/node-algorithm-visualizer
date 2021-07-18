@@ -14,8 +14,8 @@ function draw(size) {
    }
 }
 
-function exchangeAnimation() {
-   reqAnimFrame = window.requestAnimationFrame(exchangeAnimation);
+function animateRectangles() {
+   reqAnimFrame = window.requestAnimationFrame(animateRectangles);
    if(x >= 9*25){
       return;
    }
@@ -42,6 +42,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
    createArray(arr, size);
    draw(size);
 
-   exchangeAnimation(0, 9, 0, 9*25);
+   animateRectangles();
 
 });
