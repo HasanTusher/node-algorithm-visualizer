@@ -33,6 +33,18 @@ function animateRectangles() {
       }
    }
 }
+
+function sortArray(arr) {
+   for(let i = 0; i< arr.length; i++){
+      let val = arr[i];
+      for(let j = 0; j< arr.length; j++){
+         if(val < arr[j]){
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+         }
+      }
+   }
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
    arr = [];
    let size = 10;
@@ -40,8 +52,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
    x = 0;
    x2 = 9*25
    createArray(arr, size);
+   console.log(arr);
+   sortArray(arr);
+   console.log(arr);
    draw(size);
 
-   animateRectangles();
+   //animateRectangles();
 
 });
