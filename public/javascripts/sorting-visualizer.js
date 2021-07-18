@@ -3,6 +3,9 @@ function createArray(arr, size) {
       arr.push(i);
       renderArray.push(i);
    }
+   // let z = [1,2,3,5,6,7,8,9,10,4];
+   // renderArray = [...z];
+   // return z;
 }
 
 function draw(size) {
@@ -11,13 +14,16 @@ function draw(size) {
    context.clearRect(0, 0, 500, 500);
    for(let i = 0; i < size; i++) {
       context.fillStyle = "#ac2c2c";
-      context.fillRect(i*25, 100+(i*25), 25, renderArray[i]*25);
+      context.fillRect(i*25, calculateY(renderArray[i], 10), 25, renderArray[i]*25);
    }
 }
-
+function calculateY(val, highestVal){
+   return 100+((highestVal-val)*25);
+}
 function animateRectangles() {
    reqAnimFrame = window.requestAnimationFrame(animateRectangles);
    if(x == xdest){
+      //return
       renderArray = [...arr];
       sortArray(arr, 25)
    }
@@ -37,7 +43,7 @@ function animateRectangles() {
             //y = 100-(i*25);
          }
          context.fillStyle = "#1a24cf";
-         context.fillRect(x, 100+(i*25), 25, renderArray[i]*25);
+         context.fillRect(x, calculateY(renderArray[i], 10), 25, renderArray[i]*25);
       }else if(i == secondaryIndex){
          console.log(x2)
          console.log(x2dest)
@@ -47,11 +53,11 @@ function animateRectangles() {
             x2-=1;
          }
          context.fillStyle = "#1a24cf";
-         context.fillRect(x2, 100+(i*25), 25, renderArray[i]*25);
+         context.fillRect(x2, calculateY(renderArray[i], 10), 25, renderArray[i]*25);
       }
       else{
          context.fillStyle = "#1a24cf";
-         context.fillRect(i*25, 100+(i*25), 25, renderArray[i]*25);
+         context.fillRect(i*25, calculateY(renderArray[i], 10), 25, renderArray[i]*25);
       }
    }
 }
