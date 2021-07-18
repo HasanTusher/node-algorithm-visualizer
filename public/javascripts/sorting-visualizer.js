@@ -35,11 +35,17 @@ function animateRectangles() {
 }
 
 function sortArray(arr) {
-   for(let i = 0; i< arr.length; i++){
+   for( i; i< arr.length; i++){
       let val = arr[i];
-      for(let j = 0; j< arr.length; j++){
+
+      if(j === arr.length) j =0; // last element
+
+      for( j; j< arr.length; j++){
          if(val < arr[j]){
-            [arr[i], arr[j]] = [arr[j], arr[i]];
+            [arr[i], arr[j]] = [arr[j], arr[i]]; // arr[i] and arr[j] will swap position
+            //i++; j++;
+            return
+
          }
       }
    }
@@ -47,16 +53,19 @@ function sortArray(arr) {
 
 document.addEventListener("DOMContentLoaded", function(event) {
    arr = [];
+   i = 0; // i equivalent
+   j = 0; // j equivalent
    let size = 10;
-   var rightMost = 9*25;
    x = 0;
    x2 = 9*25
    createArray(arr, size);
    console.log(arr);
-   sortArray(arr);
+   //sortArray(arr);
    console.log(arr);
+   console.log(i)
+   console.log(j)
    draw(size);
 
-   //animateRectangles();
+   animateRectangles();
 
 });
