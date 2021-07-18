@@ -18,6 +18,7 @@ function draw(size) {
 function animateRectangles() {
    reqAnimFrame = window.requestAnimationFrame(animateRectangles);
    if(x == xdest){
+      renderArray = [...arr];
       sortArray(arr, 25)
    }
    var canvas  = document.getElementById("myCanvas");
@@ -86,17 +87,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
    //sortArray(arr);
    draw(size);
    sortArray(arr, 25);
-   console.log(x)
-   console.log(xdest)
-   // for(let i =0; i<100; i++){
-   //    sortArray(arr, 25);
-   //    console.log(arr);
-   //    console.log(x);
-   //    console.log(xdest);
-   // }
-
-
-
    animateRectangles();
 
 });
