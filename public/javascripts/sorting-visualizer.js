@@ -3,9 +3,6 @@ function createArray(arr, size) {
       arr.push(i);
       renderArray.push(i);
    }
-   // let z = [1,2,3,5,6,7,8,9,10,4];
-   // renderArray = [...z];
-   // return z;
 }
 
 function draw(size) {
