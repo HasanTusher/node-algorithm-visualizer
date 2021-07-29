@@ -5,6 +5,12 @@ function createArray(arr, size) {
    }
 }
 
+function getRandomInt(min, max) {
+   min = Math.ceil(min);
+   max = Math.floor(max);
+   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
 function draw(size) {
    var canvas  = document.getElementById("myCanvas");
    var context = canvas.getContext("2d");
